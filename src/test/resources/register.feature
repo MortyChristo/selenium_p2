@@ -1,5 +1,5 @@
 Feature: Register
-
+#
 #  Scenario Outline: Invalid Registration
 #    Given I am at the registration page
 #    When I type in "<email>" for email
@@ -21,10 +21,10 @@ Feature: Register
 #    |valid1@email.com|PassWord123!|J      |Doe     |123-456-4567 |Names must have at least 2 letters|
 #    |valid1@email.com|PassWord123!|John      |Doe     | |mobile phone cannot be blank|
 #    |valid1@email.com|PassWord123!|John      |Doe     |1234564567 |mobile phone format <555-555-5555>|
-##
+#
 #    Scenario: Valid Registration
 #      Given I am at the registration page
-#      When I type in "valid45@email.com" for email
+#      When I type in "valid20@email.com" for email
 #      And I type in "PassWord123!" for password
 #      And I type in "John" for first name
 #      And I type in "Doe" for last name

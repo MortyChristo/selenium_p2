@@ -2,12 +2,13 @@ pipeline {
     agent any
     environment {
     	MAVEN_HOME='/opt/maven'
-	PATH=sh(script: "export PATH=${PATH}:/opt/maven/bin", returnStdout: true)
+	PATH=sh(script: "echo ${PATH}:/opt/maven/bin", returnStdout: true).trim()
     }
     stages {
         stage('Selenium Test') {
        	    steps {
                 sh "export CUCUMBER_PUBLISH_ENABLED=true"
+		sh "export PATH={env.PATH}"
 		sh 'printenv'
                 sh "mvn --version"
                 sh "mvn clean verify"

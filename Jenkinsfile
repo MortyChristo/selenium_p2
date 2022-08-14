@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
     	MAVEN_HOME='/opt/maven'
-	PATH=sh(script: "export PATH=${PATH}:/opt/maven/bin", returnStdout: false)
+	PATH=sh(script: "export PATH=${PATH}:/opt/maven/bin", returnStdout: true)
     }
     stages {
         stage('Selenium Test') {

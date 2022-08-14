@@ -1,20 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            parallel {
-                stage('Selenium Test') {
-                    steps {
-                        sh "export MAVEN_HOME=/opt/maven"
-                        sh "export PATH='$PATH:$MAVEN_HOME/bin'"
-                        sh "export CUCUMBER_PUBLISH_ENABLED=true"
-                        sh "mvn --version"
-                        sh "mvn clean verify"
-                    }
-                }
+        stage('Selenium Test') {
+       	    steps {
+                sh "export MAVEN_HOME=/opt/mave
+		sh "export PATH='$PATH:$MAVEN_HOME/bin'"
+                sh "export CUCUMBER_PUBLISH_ENABLED=true"
+                sh "mvn --version"
+                sh "mvn clean verify"
             }
-        }
-
+         }
+    }
     post {
         always {
             echo 'The pipeline completed'
@@ -40,5 +36,5 @@ pipeline {
             echo 'Build stage failed'
             error('Stopping early…')
         }
-	}
+    }
 }

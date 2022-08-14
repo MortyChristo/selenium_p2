@@ -26,6 +26,7 @@ public class testrunner extends AbstractTestNGCucumberTests{
 //        options.addArguments("−−incognito");
         options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--no-sandbox");
 
+
         driver = new ChromeDriver(options);
     }
 

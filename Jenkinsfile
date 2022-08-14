@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Selenium Test') {
        	    steps {
-                sh "export MAVEN_HOME=/opt/mave
+                sh "export MAVEN_HOME=/opt/maven"
 		sh "export PATH='$PATH:$MAVEN_HOME/bin'"
                 sh "export CUCUMBER_PUBLISH_ENABLED=true"
                 sh "mvn --version"

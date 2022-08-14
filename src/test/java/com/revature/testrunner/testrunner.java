@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-@Cucumber.Options(format = {"json:target/cucumber.json"}, glue="com.revature.steps", features={"src/test/resources/index.feature",
+@CucumberOptions(format = {"json:target/cucumber.json"}, glue="com.revature.steps", features={"src/test/resources/index.feature",
         "src/test/resources/login.feature", "src/test/resources/register.feature", "src/test/resources/mytours.feature",
         "src/test/resources/addtour.feature", "src/test/resources/tours.feature", "src/test/resources/update.feature"})
 public class testrunner extends AbstractTestNGCucumberTests{

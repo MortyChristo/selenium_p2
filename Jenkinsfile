@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+    	MAVEN_HOME='/opt/maven'	
+    }
     stages {
         stage('Selenium Test') {
        	    steps {

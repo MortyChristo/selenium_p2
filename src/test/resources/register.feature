@@ -21,6 +21,7 @@ Feature: Register
 #    |valid1@email.com|PassWord123!|J      |Doe     |123-456-4567 |Names must have at least 2 letters|
 #    |valid1@email.com|PassWord123!|John      |Doe     | |mobile phone cannot be blank|
 #    |valid1@email.com|PassWord123!|John      |Doe     |1234564567 |mobile phone format <555-555-5555>|
+
 ##
 ##    Scenario: Valid Registration
 ##      Given I am at the registration page

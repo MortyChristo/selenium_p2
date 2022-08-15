@@ -111,9 +111,11 @@ public class AddTourPage {
     private WebElement logoutButton;
 
     public void typePrice(String price){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
         priceInput.sendKeys(price);
     }
     public void typeTitle(String title){
+        WebDriverWait wdw = new WebDriverWait(driver, Duration.ofSeconds(3));
         titleInput.sendKeys(title);
     }
 

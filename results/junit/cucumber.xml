@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="41.641">
-<testcase classname="Add Tour" name="add valid tour" time="3.89">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="108" time="358.556">
+<testcase classname="Add Tour" name="add valid tour" time="4.765">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 1 for day.....................................................passed
 And I select 1 2 3 for three valid options..................................passed
@@ -11,7 +11,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 2" time="3.205">
+<testcase classname="Add Tour" name="add valid tour 2" time="2.392">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 2 for day.....................................................passed
 And I select 2 3 1 for three valid options..................................passed
@@ -22,7 +22,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 3" time="2.986">
+<testcase classname="Add Tour" name="add valid tour 3" time="2.54">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 3 for day.....................................................passed
 And I select 3 4 2 for three valid options..................................passed
@@ -33,7 +33,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 4" time="3.413">
+<testcase classname="Add Tour" name="add valid tour 4" time="2.302">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 4 for day.....................................................passed
 And I select 4 5 6 for three valid options..................................passed
@@ -44,7 +44,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 5" time="3.103">
+<testcase classname="Add Tour" name="add valid tour 5" time="2.406">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 5 for day.....................................................passed
 And I select 5 6 4 for three valid options..................................passed
@@ -55,7 +55,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 6" time="3.245">
+<testcase classname="Add Tour" name="add valid tour 6" time="2.394">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 6 for day.....................................................passed
 And I select 6 7 5 for three valid options..................................passed
@@ -66,7 +66,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 7" time="2.877">
+<testcase classname="Add Tour" name="add valid tour 7" time="2.523">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 6 for day.....................................................passed
 And I select 9 10 8 for three valid options.................................passed
@@ -77,7 +77,7 @@ And I accept the alert......................................................pass
 Then I should be redirected to mytours.html.................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Add Tour" name="add valid tour 8" time="3.109">
+<testcase classname="Add Tour" name="add valid tour 8" time="2.436">
 <system-out><![CDATA[Given I am at the add tours page............................................passed
 When I select 5 for day.....................................................passed
 And I select 10 11 12 for three valid options...............................passed
@@ -86,6 +86,795 @@ And I type in a valid title of "mytour".....................................pass
 And I click on the add tour button in add tours.............................passed
 And I accept the alert......................................................passed
 Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="try to add invalid tour   #to re use functiality even though these say valid most options listed are not valid" time="2.391">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 2 for day.....................................................passed
+And I select 2 3 1 for three valid options..................................passed
+And I type in a valid price of "abc"........................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+Then I should receive an alert with the error "The price must be a numeric value with maximum 2 decimal places".passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="try to add invalid tour   #to re use functiality even though these say valid most options listed are not valid 2" time="2.391">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 3 for day.....................................................passed
+And I select 3 4 2 for three valid options..................................passed
+And I type in a valid price of "-1".........................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+Then I should receive an alert with the error "The price must be a positive value".passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="try to add invalid tour   #to re use functiality even though these say valid most options listed are not valid 3" time="2.513">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 5 for day.....................................................passed
+And I select 5 6 4 for three valid options..................................passed
+And I type in a valid price of "99".........................................passed
+And I type in a valid title of ""...........................................passed
+And I click on the add tour button in add tours.............................passed
+Then I should receive an alert with the error "You have to add a title".....passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid tour" time="2.407">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 1 for day.....................................................passed
+And I select 1 2 3 4 for four valid options.................................passed
+And I type in a valid price of "12.25"......................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid tour 2" time="2.523">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 2 for day.....................................................passed
+And I select 2 3 1 8 for four valid options.................................passed
+And I type in a valid price of "15".........................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid tour 3" time="3.19">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 3 for day.....................................................passed
+And I select 3 4 2 12 for four valid options................................passed
+And I type in a valid price of "38.7".......................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid tour 4" time="2.524">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 4 for day.....................................................passed
+And I select 4 5 6 10 for four valid options................................passed
+And I type in a valid price of "32.20"......................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid tour 5" time="2.801">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 5 for day.....................................................passed
+And I select 5 6 4 3 for four valid options.................................passed
+And I type in a valid price of "99".........................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid with 5 poitour" time="3.867">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 1 for day.....................................................passed
+And I select 1 2 3 4 5 for five valid options...............................passed
+And I type in a valid price of "12.25"......................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid with 5 poitour 2" time="2.694">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 2 for day.....................................................passed
+And I select 2 3 1 8 10 for five valid options..............................passed
+And I type in a valid price of "15".........................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid with 5 poitour 3" time="3.072">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 3 for day.....................................................passed
+And I select 3 4 2 9 11 for five valid options..............................passed
+And I type in a valid price of "38.7".......................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid with 5 poitour 4" time="2.595">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 4 for day.....................................................passed
+And I select 4 5 6 12 8 for five valid options..............................passed
+And I type in a valid price of "32.20"......................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="add valid with 5 poitour 5" time="2.499">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 5 for day.....................................................passed
+And I select 5 6 4 7 10 for five valid options..............................passed
+And I type in a valid price of "99".........................................passed
+And I type in a valid title of "mytour".....................................passed
+And I click on the add tour button in add tours.............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="try to add 6 poi" time="2.796">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I select 3 for day.....................................................passed
+And I select 1 2 3 4 5 6 for six valid options..............................passed
+And I type in a valid price of "50".........................................passed
+And I type in a valid title of "Title"......................................passed
+And I click on the add tour button in add tours.............................passed
+Then I should receive an alert with the error "Cannot pick more than 5 points of interest".passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="Click stops button" time="1.565">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I click on the stops button in add tours...............................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="Click guides button" time="1.674">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I click on the guides button in add tours..............................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="click my tours button" time="1.346">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I click on the my tours button in add tours............................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="click home button" time="1.541">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I click on the home button in add tours................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Add Tour" name="click logout button" time="2.147">
+<system-out><![CDATA[Given I am at the add tours page............................................passed
+When I click on the logout button in add tours..............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on tours while not logged in" time="0.517">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I click on the tours button............................................passed
+Then I should be redirected to index.html#home..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on current tours while not logged in" time="0.764">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I click on the current tours button....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on stops while not logged in" time="0.524">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I click on the stops button............................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on guides while not logged in" time="0.562">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I click on the guides button...........................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on register while not logged in" time="0.677">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I click on the register button.........................................passed
+Then I should be redirected to registration.html............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on login while not logged in" time="0.55">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I click on the login button............................................passed
+Then I should be redirected to login.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on tours while logged in as user" time="1.839">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a user on home page..................................passed
+And I click on the tours button.............................................passed
+Then I should be redirected to index.html#home..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on current tours while logged in as user" time="1.621">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a user on home page..................................passed
+And I click on the current tours button.....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on stops while logged in as user" time="1.725">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a user on home page..................................passed
+And I click on the stops button.............................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on guides while logged in as user" time="1.661">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a user on home page..................................passed
+And I click on the guides button............................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on all tours while logged in as user" time="1.679">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a user on home page..................................passed
+And I click on the all tours button on home page............................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on logout while logged in as user" time="2.239">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a user on home page..................................passed
+And I click on the logout button on home page...............................passed
+And I accept the alert on home page.........................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on tours while logged in as guide" time="1.796">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the tours button.............................................passed
+Then I should be redirected to index.html#home..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on stops while logged in as guide" time="1.631">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the stops button.............................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on current tours while logged in as guide" time="1.718">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the current tours button.....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on guides while logged in as guide" time="1.773">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the guides button............................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on add tour while logged in as guide" time="1.556">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the add tour button on home page.............................passed
+Then I should be redirected to addTour.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on my tours while logged in as guide" time="1.591">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the my tours button..........................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on all tours while logged in as guide" time="1.777">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the all tours button on home page............................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Home" name="I click on logout while logged in as guide" time="2.013">
+<system-out><![CDATA[Given I am at the home page.................................................passed
+When I am logged in as a guide on home page.................................passed
+And I click on the logout button on home page...............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="log in user" time="1.127">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "jd03@a.ca".................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Valid user login" time="1.134">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "jd80@a.ca".................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Valid user login 2" time="1.277">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "jd81@a.ca".................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Valid user login 3" time="1.657">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "jd03@a.ca".................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Valid user login 4" time="1.056">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "mc@a.ca"...................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Valid user login 5" time="1.07">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "vv@a.ca"...................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Valid user login 6" time="1.104">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I type in a valid username "m@a.ca"....................................passed
+And I type in a valid password "password"...................................passed
+And I click on the login button in login....................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Click tours on login page" time="0.54">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I click on the tours button in login...................................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Click stops on login page" time="0.674">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I click on the stops button in login...................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Click guides on login page" time="0.643">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I click on the guides button in login..................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Click home on login page" time="0.552">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I click on the home button in login....................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="Click tours on register page" time="0.411">
+<system-out><![CDATA[Given I am at the login page................................................passed
+When I click on the register button in login................................passed
+Then I should be redirected to registration.html............................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click add tour button on my tours page" time="1.312">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the add tour button..........................................passed
+Then I should be redirected to addTour.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click all tours" time="1.351">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the all tours button in mytours..............................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click Home button" time="1.58">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the home button in mytours...................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click stops button" time="1.498">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the stops button in mytours..................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click guides button" time="2.967">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the guides button in my tours................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click first update #turn this into an outline if possible" time="1.343">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the first update button......................................passed
+Then I should be redirected to update.html..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click first delete" time="1.307">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+And I click on the first delete button......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="MyTours" name="Click logout button" time="2.463">
+<system-out><![CDATA[Given I am at the my tours page.............................................passed
+Then I click on the logout button in my tours...............................passed
+And I accept the alert......................................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration" time="1.068">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "" for email.................................................passed
+And I type in "" for password...............................................passed
+And I type in "" for first name.............................................passed
+And I type in "" for last name..............................................passed
+And I type in "" for phone number...........................................passed
+And I click on the register button in register..............................passed
+Then I should get the error "Names cannot be blank".........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 2" time="1.117">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "validemail.com" for email...................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "accepted email address format is: username@company.domain".passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 3" time="1.148">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "" for email.................................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "email cannot be blank".........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 4" time="1.099">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "pass" for password...........................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "Accepted password length is between 8 and 20 characters inclusive".passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 5" time="1.09">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "" for first name.............................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "Names cannot be blank".........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 6" time="1.139">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "" for last name..............................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "Names cannot be blank".........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 7" time="1.086">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "D" for last name.............................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "Names must have at least 2 letters"............passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 8" time="1.077">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "J" for first name............................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "123-456-4567" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should get the error "Names must have at least 2 letters"............passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 9" time="1.054">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "" for phone number...........................................passed
+And I click on the register button in register..............................passed
+Then I should get the error "mobile phone cannot be blank"..................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Invalid Registration 10" time="1.057">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid1@email.com" for email.................................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "1234564567" for phone number.................................passed
+And I click on the register button in register..............................passed
+Then I should get the error "mobile phone format <555-555-5555>"............passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="Valid Registration" time="1.23">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I type in "valid3001@email.com" for email..............................passed
+And I type in "PassWord123!" for password...................................passed
+And I type in "John" for first name.........................................passed
+And I type in "Doe" for last name...........................................passed
+And I type in "000-000-0000" for phone number...............................passed
+And I click on the register button in register..............................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="I click home on register" time="0.677">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I click on the home button in register.................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Register" name="I click login on register" time="0.33">
+<system-out><![CDATA[Given I am at the registration page.........................................passed
+When I click on the login button in register................................passed
+Then I should be redirected to login.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="At tours page not logged in" time="0.841">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+And I click on the guides button in tours...................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="At tours page not logged in 2" time="0.668">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+And I click on the stops button in tours....................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="At tours page not logged in 3" time="0.623">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+And I click on the login button in tours....................................passed
+Then I should be redirected to login.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="At tours page not logged in 4" time="0.715">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+And I click on the register button in tours.................................passed
+Then I should be redirected to register.html................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="At tours page not logged in 5" time="1.176">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+And I click on the home button in tours.....................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on stops while logged on" time="1.719">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a user...............................................passed
+And I click on the stops button in tours....................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on guides while logged on" time="1.826">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a user...............................................passed
+And I click on the guides button in tours...................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on home while logged on" time="2.02">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a user...............................................passed
+And I click on the home button in tours.....................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on logout while logged on" time="2.567">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a user...............................................passed
+And I click on the logout button in tours...................................passed
+And I accept the alert in tours.............................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on stops while logged on" time="2.184">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a guide..............................................passed
+And I click on the stops button in tours....................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on guides while logged on" time="1.761">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a guide..............................................passed
+And I click on the guides button in tours...................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on my tours while logged on" time="1.905">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a guide..............................................passed
+And I click on the my tour button in tours..................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on add tours while logged on" time="1.842">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a guide..............................................passed
+And I click on the add tour button in tours.................................passed
+Then I should be redirected to addTour.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on home while logged on" time="1.946">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a guide..............................................passed
+And I click on the home button in tours.....................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="tours" name="Click on logout while logged on" time="2.919">
+<system-out><![CDATA[Given I am at the tours page................................................passed
+When I am logged in as a guide..............................................passed
+And I click on the logout button in tours...................................passed
+And I accept the alert in tours.............................................passed
+Then I should be redirected to index.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Successfully Update the First Tour" time="1.972">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I select 3 for day in update...........................................passed
+And I type in a valid price of "22" in update...............................passed
+And I select 1..............................................................passed
+And I click on update tours button..........................................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Successfully Update the First Tour 2" time="1.933">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I select 0 for day in update...........................................passed
+And I type in a valid price of "10" in update...............................passed
+And I select 2..............................................................passed
+And I click on update tours button..........................................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Successfully Update the First Tour 3" time="2.09">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I select 4 for day in update...........................................passed
+And I type in a valid price of "87" in update...............................passed
+And I select 1..............................................................passed
+And I click on update tours button..........................................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Successfully Update the First Tour 4" time="2.281">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I select 6 for day in update...........................................passed
+And I type in a valid price of "45.02" in update............................passed
+And I select 2..............................................................passed
+And I click on update tours button..........................................passed
+And I accept the alert......................................................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Unsuccessfully update the first tour" time="2.079">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I type in a valid price of "-22" in update.............................passed
+And I select 1..............................................................passed
+And I click on update tours button..........................................passed
+Then I should get the error "The price must be a positive value" in update..passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Unsuccessfully update the first tour 2" time="1.854">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I type in a valid price of "10" in update..............................passed
+And I select 0..............................................................passed
+And I click on update tours button..........................................passed
+Then I should get the error "A status must be chosen before updating the changes" in update.passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Unsuccessfully update the first tour 3" time="1.823">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I type in a valid price of "abc" in update.............................passed
+And I select 1..............................................................passed
+And I click on update tours button..........................................passed
+Then I should get the error "The price must be a numeric value with maximum 2 decimal places" in update.passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="Unsuccessfully update the first tour 4" time="1.816">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I type in a valid price of "" in update................................passed
+And I select 0..............................................................passed
+And I click on update tours button..........................................passed
+Then I should get the error "A status must be chosen before updating the changes" in update.passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="I Click on stops button" time="1.952">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I click on the stops button in update..................................passed
+Then I should be redirected to index.html#pois..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="I click on guides" time="1.527">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I click on the guides button in update.................................passed
+Then I should be redirected to index.html#guides............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="I click on my tours" time="1.305">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I click on the my tours button in update...............................passed
+Then I should be redirected to mytours.html.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="I click all tours" time="1.376">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I click on the all tours button in update..............................passed
+Then I should be redirected to tours.html...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Update" name="I click on logout" time="2.055">
+<system-out><![CDATA[Given I am at the update page...............................................passed
+When I click on the logout button in update.................................passed
+And I accept the alert......................................................passed
+Then I should be redirected to index.html...................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
